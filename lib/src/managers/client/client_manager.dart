@@ -127,8 +127,8 @@ class ClientManager with dio.DioMixin implements dio.Dio, IClientManager {
   }
 
   ResponseModel<R> _getResponseResult<T extends ClientModel, R>(dynamic data, T parserModel) {
-    late final R? model;
-    late final ErrorModel? error;
+    R? model;
+    ErrorModel? error;
     try {
       model = _parseBody<R, T>(data, parserModel);
     } on ErrorModel catch (e) {
