@@ -97,7 +97,7 @@ class ClientManager with dio.DioMixin implements dio.Dio, IClientManager {
     try {
       final response = await request(path, data: postBody, options: options, queryParameters: query);
       final responseStatusCode = response.statusCode ?? HttpStatus.notFound;
-      if (responseStatusCode >= HttpStatus.ok) {
+      if (responseStatusCode == HttpStatus.ok) {
         responseModel = _getResponseResult<T, R>(response.data, parseModel);
       } else {
         responseModel = ResponseModel<R?>(
