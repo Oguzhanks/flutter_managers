@@ -17,8 +17,6 @@ extension _CoreServiceExtension on ClientManager {
         return responseBody.map((data) => model.fromJson(data)).cast<T>().toList() as R;
       } else if (responseBody is Map<String, dynamic>) {
         return model.fromJson(responseBody) as R;
-      } else if (responseBody == null) {
-        return model as R;
       } else {
         throw ErrorModel(
           type: ErrorType.local,
