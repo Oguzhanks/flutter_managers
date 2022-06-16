@@ -2,7 +2,7 @@ part of '../client_manager.dart';
 
 extension _CoreServiceExtension on ClientManager {
   dynamic _getBodyModel(dynamic data) {
-    if (data is ClientModel) {
+    if (data is ManagerModel) {
       return data.toJson();
     } else if (data != null) {
       return jsonEncode(data);
@@ -11,7 +11,7 @@ extension _CoreServiceExtension on ClientManager {
     }
   }
 
-  R? _parseBody<R, T extends ClientModel>(dynamic responseBody, T model) {
+  R? _parseBody<R, T extends ManagerModel>(dynamic responseBody, T model) {
     try {
       if (responseBody is List) {
         return responseBody.map((data) => model.fromJson(data)).cast<T>().toList() as R;

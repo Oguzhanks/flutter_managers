@@ -39,7 +39,7 @@ class ClientManager with dio.DioMixin implements dio.Dio, IClientManager {
   }
 
   @override
-  Future<ResponseModel<R?>> getRequest<T extends ClientModel, R>(
+  Future<ResponseModel<R?>> getRequest<T extends ManagerModel, R>(
     String path, {
     required T parseModel,
     Map<String, dynamic>? query,
@@ -82,7 +82,7 @@ class ClientManager with dio.DioMixin implements dio.Dio, IClientManager {
   }
 
   @override
-  Future<ResponseModel<R?>> postRequest<T extends ClientModel, R>(
+  Future<ResponseModel<R?>> postRequest<T extends ManagerModel, R>(
     String path, {
     required T parseModel,
     Map<String, dynamic>? query,
@@ -126,7 +126,7 @@ class ClientManager with dio.DioMixin implements dio.Dio, IClientManager {
     return responseModel;
   }
 
-  ResponseModel<R> _getResponseResult<T extends ClientModel, R>(dynamic data, T parserModel) {
+  ResponseModel<R> _getResponseResult<T extends ManagerModel, R>(dynamic data, T parserModel) {
     R? model;
     ErrorModel? error;
     try {
