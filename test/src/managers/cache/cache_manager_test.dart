@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_managers/src/managers/cache/shared_preferences/SharedService.dart';
+import 'package:flutter_managers/src/managers/cache/shared_preferences/shared_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../models/todo_model.dart';
